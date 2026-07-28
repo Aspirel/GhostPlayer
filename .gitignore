@@ -1,5 +1,41 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿# Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.cache
 
-/.vs
+# .NET build artifacts
+bin/
+obj/
+
+# Python
+__pycache__/
+venv/
+.env/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+go.work
+go.work.sum
+vendor/
+
+# Node (if added later)
+node_modules/
+dist/
+
+# Logs
+*.log
+logs/
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Docker
+*.tar
