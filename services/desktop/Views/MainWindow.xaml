@@ -7,7 +7,7 @@
         xmlns:view="clr-namespace:desktop.Views"
         xmlns:vm="clr-namespace:desktop.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="600" Width="800"
 		Background="#1E1E1E">
 
 	<Window.Resources>
