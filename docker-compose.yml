@@ -4,7 +4,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      MONGO_URI: "mongodb+srv://Daniel:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
+      MONGO_URI: "mongodb+srv://<name>:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
     depends_on:
       - ai-transcribe
       - ai-summarize
@@ -16,25 +16,25 @@ services:
     ports:
       - "5001:5001"
     environment:
-      MONGO_URI: "mongodb+srv://Daniel:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
+      MONGO_URI: "mongodb+srv://<name>:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
 
   ai-summarize:
     build: ./services/ai-summarize
     ports:
       - "5002:5002"
     environment:
-      MONGO_URI: "mongodb+srv://Daniel:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
+      MONGO_URI: "mongodb+srv://<name>:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
 
   ai-scenes:
     build: ./services/ai-scenes
     ports:
       - "5003:5003"
     environment:
-      MONGO_URI: "mongodb+srv://Daniel:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
+      MONGO_URI: "mongodb+srv://<name>:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
 
   ai-embeddings:
     build: ./services/ai-embeddings
     ports:
       - "5004:5004"
     environment:
-      MONGO_URI: "mongodb+srv://Daniel:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
+      MONGO_URI: "mongodb+srv://<name>:<db_password>@drp-mongo-cluster.iyanujc.mongodb.net/?appName=Drp-mongo-cluster"
