@@ -14,9 +14,8 @@ type SearchResult struct {
 }
 
 func YoutubeSearchHandler(w http.ResponseWriter, r *http.Request) {
-    //q := r.URL.Query().Get("q")
+    collection := DB.Collection("youtube_searches")
 
-    // TEMP MOCK — until Node metadata service is ready
     results := []SearchResult{
         {
             Title: "Mock Video 1",
@@ -32,6 +31,15 @@ func YoutubeSearchHandler(w http.ResponseWriter, r *http.Request) {
             Channel: "Mock Channel",
             Duration: 240,
         },
+    }
+
+    _, err := collection.InsertOne(context.TODO(), bson.M{
+        "timestamp": time.Now(),
+        "results":   results,
+    })
+
+    if err != nil {
+        log.Println("Mongo insert failed:", err)
     }
 
     json.NewEncoder(w).Encode(results)
