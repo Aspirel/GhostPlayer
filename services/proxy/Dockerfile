@@ -9,6 +9,8 @@ RUN go mod download
 
 # Copy the rest of the source
 COPY . .
+RUN go mod tidy
+RUN go build
 
 # Build the binary
 RUN CGO_ENABLED=0 GOOS=linux go build -o proxy .
