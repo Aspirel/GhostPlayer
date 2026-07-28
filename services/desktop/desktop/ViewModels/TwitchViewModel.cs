@@ -50,6 +50,7 @@ namespace desktop.ViewModels
          */
         private async Task Search() {
             var results = await _twitchService.SearchAsync(SearchQuery);
+            Console.WriteLine($"Search results for query '{SearchQuery}': {results.Count} items found.");
             Results.Clear();
 
             foreach (var result in results) {

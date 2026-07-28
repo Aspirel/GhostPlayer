@@ -5,7 +5,7 @@ namespace desktop.Helpers {
         private static readonly HttpClient _httpClient;
         static HttpClientFactory() {
             _httpClient = new HttpClient {
-                BaseAddress = new Uri("http://localhost:5000")
+                BaseAddress = new Uri("http://localhost:8080")
             };
         }
 

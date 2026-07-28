@@ -31,7 +31,7 @@
                 <DataTemplate>
                     <StackPanel Margin="0 10">
                         <TextBlock Text="{Binding Title}" FontSize="16"/>
-                        <TextBlock Text="{Binding VideoId}" FontSize="12" Foreground="Gray"/>
+                        <TextBlock Text="{Binding VideoUrl}" FontSize="12" Foreground="Gray"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

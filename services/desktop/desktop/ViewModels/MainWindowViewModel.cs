@@ -43,12 +43,12 @@ namespace desktop.ViewModels {
         }
 
         public MainWindowViewModel() {
-            ShowHomeCommand = new RelayCommand(_ => CurrentView = new HomeView());
-            ShowYoutubeCommand = new RelayCommand(_ => CurrentView = new YoutubeView());
-            ShowTwitchCommand = new RelayCommand(_ => CurrentView = new TwitchView());
-            ShowSettingsCommand = new RelayCommand(_ => CurrentView = new SettingsView());
-            ShowHistoryCommand = new RelayCommand(_ => CurrentView = new HistoryView());
-            ShowLocalFilesCommand = new RelayCommand(_ => CurrentView = new LocalFilesView());
+            ShowHomeCommand = new RelayCommand(_ => CurrentView = new HomeViewModel());
+            ShowYoutubeCommand = new RelayCommand(_ => CurrentView = new YoutubeViewModel());
+            ShowTwitchCommand = new RelayCommand(_ => CurrentView = new TwitchViewModel());
+            ShowSettingsCommand = new RelayCommand(_ => CurrentView = new SettingsViewModel());
+            ShowHistoryCommand = new RelayCommand(_ => CurrentView = new HistoryViewModel());
+            ShowLocalFilesCommand = new RelayCommand(_ => CurrentView = new LocalFilesViewModel());
         }
     }
 }

@@ -13,10 +13,10 @@ namespace desktop.Services {
 
         internal async Task<List<SearchResult>> SearchAsync(string searchQuery) {
             try {
-                return await _httpClient.GetFromJsonAsync<List<SearchResult>>($"search?q={Uri.EscapeDataString(searchQuery)}");
+                return await _httpClient.GetFromJsonAsync<List<SearchResult>>($"twitch/search?q={Uri.EscapeDataString(searchQuery)}");
             } catch (Exception ex) {
                 Console.WriteLine($"Error occurred while searching: {ex.Message}");
-                return [];
+                return new List<SearchResult>();
             }
         }
     }
