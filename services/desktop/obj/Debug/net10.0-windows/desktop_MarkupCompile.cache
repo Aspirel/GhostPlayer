@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_O
 C:\Users\Daniel\Documents\Dev\GhostPlayer\services\desktop\App.xaml
 7-504805907
 
-39-293661360
-4121404034516
+301725465015
+206702017258
 Views\HistoryView.xaml;Views\HomeView.xaml;Views\LocalFilesView.xaml;Views\MainWindow.xaml;Views\SettingsView.xaml;Views\TwitchView.xaml;Views\YoutubeView.xaml;
 
-False
+True
 

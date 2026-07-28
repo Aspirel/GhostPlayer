@@ -1,10 +1,11 @@
 package main
 
 import (
-    "log"
-    "net/http"
-    "github.com/gorilla/mux"
-    "ghostplayer/proxy/services"
+	"ghostplayer/proxy/services"
+	"log"
+	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -12,6 +13,7 @@ func main() {
 
     r := mux.NewRouter()
     r.HandleFunc("/youtube/search", services.YoutubeSearchHandler).Methods("GET")
+    r.HandleFunc("/twitch/search", services.TwitchSearchHandler).Methods("GET")
 
     log.Println("Proxy running on :8080")
     http.ListenAndServe(":8080", r)
