@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run WPF App",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/services/desktop/bin/Debug/net10.0-windows/desktop.exe",
+            "cwd": "${workspaceFolder}/services/desktop",
+            "console": "internalConsole"
+        }
+    ]
+}
