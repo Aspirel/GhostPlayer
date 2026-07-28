@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Daniel\\Documents\\Dev\\desktop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{50389274-D359-AD14-FD72-986B1E2F1314}|desktop\\desktop.csproj|c:\\users\\daniel\\documents\\dev\\desktop\\desktop\\views\\twitchview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{50389274-D359-AD14-FD72-986B1E2F1314}|desktop\\desktop.csproj|solutionrelative:desktop\\views\\twitchview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50389274-D359-AD14-FD72-986B1E2F1314}|desktop\\desktop.csproj|c:\\users\\daniel\\documents\\dev\\desktop\\desktop\\views\\youtubeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{50389274-D359-AD14-FD72-986B1E2F1314}|desktop\\desktop.csproj|solutionrelative:desktop\\views\\youtubeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 220,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "YoutubeView.xaml",
+              "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\Dev\\desktop\\desktop\\Views\\YoutubeView.xaml",
+              "RelativeDocumentMoniker": "desktop\\Views\\YoutubeView.xaml",
+              "ToolTip": "C:\\Users\\Daniel\\Documents\\Dev\\desktop\\desktop\\Views\\YoutubeView.xaml",
+              "RelativeToolTip": "desktop\\Views\\YoutubeView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-28T14:32:44.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TwitchView.xaml",
+              "DocumentMoniker": "C:\\Users\\Daniel\\Documents\\Dev\\desktop\\desktop\\Views\\TwitchView.xaml",
+              "RelativeDocumentMoniker": "desktop\\Views\\TwitchView.xaml",
+              "ToolTip": "C:\\Users\\Daniel\\Documents\\Dev\\desktop\\desktop\\Views\\TwitchView.xaml",
+              "RelativeToolTip": "desktop\\Views\\TwitchView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-28T14:32:28.577Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
