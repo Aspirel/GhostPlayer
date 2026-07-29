@@ -1,15 +1,16 @@
 ﻿using desktop.Commands;
+using desktop.Models;
 using desktop.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.DirectoryServices;
+using System.Windows;
 using System.Windows.Input;
 
 namespace desktop.ViewModels
 {
     public class TwitchViewModel: INotifyPropertyChanged {
         public event PropertyChangedEventHandler PropertyChanged;
-        private readonly TwitchService _twitchService;
+        private readonly ISearchService _twitchService;
         private string _searchQuery;
         public string SearchQuery {
             get => _searchQuery;
@@ -23,7 +24,6 @@ namespace desktop.ViewModels
 
         public TwitchViewModel() {
             _twitchService = new TwitchService();
-
             Results = new ObservableCollection<SearchResult>();
             SearchCommand = new RelayCommand(async _ => await Search());
         }
@@ -49,12 +49,17 @@ namespace desktop.ViewModels
          * Clears the existing results and populates the Results collection with new search results.
          */
         private async Task Search() {
-            var results = await _twitchService.SearchAsync(SearchQuery);
-            Console.WriteLine($"Search results for query '{SearchQuery}': {results.Count} items found.");
-            Results.Clear();
+            try {
+                var results = await _twitchService.SearchAsync(SearchQuery);
 
-            foreach (var result in results) {
-                Results.Add(result);
+                Results.Clear();
+                foreach (var result in results) {
+                    Results.Add(result);
+                }
+            } catch (ArgumentException argEx) {
+                MessageBox.Show(argEx.Message, "Invalid Search Query", MessageBoxButton.OK, MessageBoxImage.Warning);
+            } catch (Exception ex) {
+                MessageBox.Show($"An error occurred while searching: {ex.Message}", "Search Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

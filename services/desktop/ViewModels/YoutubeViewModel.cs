@@ -3,12 +3,13 @@ using desktop.Models;
 using desktop.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace desktop.ViewModels {
     public class YoutubeViewModel: INotifyPropertyChanged {
         public event PropertyChangedEventHandler PropertyChanged;
-        private readonly YoutubeService _youtubeService;
+        private readonly ISearchService _youtubeService;
         private string _searchQuery;
         public string SearchQuery {
             get => _searchQuery;
@@ -23,7 +24,6 @@ namespace desktop.ViewModels {
 
         public YoutubeViewModel() {
             _youtubeService = new YoutubeService();
-
             Results = new ObservableCollection<SearchResult>();
             SearchCommand = new RelayCommand(async _ => await Search());
         }
@@ -49,11 +49,17 @@ namespace desktop.ViewModels {
          * Clears the existing results and populates the Results collection with new search results.
          */
         private async Task Search() {
-            var results = await _youtubeService.SearchAsync(SearchQuery);
-            Results.Clear();
+            try {
+                var results = await _youtubeService.SearchAsync(SearchQuery);
 
-            foreach (var result in results) {
-                Results.Add(result);
+                Results.Clear();
+                foreach (var result in results) {
+                    Results.Add(result);
+                }
+            } catch (ArgumentException argEx) {
+                MessageBox.Show(argEx.Message, "Invalid Search Query", MessageBoxButton.OK, MessageBoxImage.Warning);
+            } catch (Exception ex) {
+                MessageBox.Show($"An error occurred while searching: {ex.Message}", "Search Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

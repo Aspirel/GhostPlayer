@@ -1,4 +1,4 @@
-package types
+package Types
 
 type SearchResult struct {
 	Title     string `json:"title"`

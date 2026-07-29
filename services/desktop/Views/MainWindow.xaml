@@ -11,29 +11,30 @@
 		Background="#1E1E1E">
 
 	<Window.Resources>
-		<DataTemplate DataType="{x:Type vm:YoutubeViewModel}">
-			<view:YoutubeView />
-		</DataTemplate>
-
 		<DataTemplate DataType="{x:Type vm:HomeViewModel}">
 			<view:HomeView />
+		</DataTemplate>
+
+		<DataTemplate DataType="{x:Type vm:YoutubeViewModel}">
+			<view:YoutubeView />
 		</DataTemplate>
 
 		<DataTemplate DataType="{x:Type vm:TwitchViewModel}">
 			<view:TwitchView />
 		</DataTemplate>
 
-		<DataTemplate DataType="{x:Type vm:SettingsViewModel}">
-			<view:SettingsView />
+		<DataTemplate DataType="{x:Type vm:LocalFilesViewModel}">
+			<view:LocalFilesView />
 		</DataTemplate>
 
 		<DataTemplate DataType="{x:Type vm:HistoryViewModel}">
 			<view:HistoryView />
 		</DataTemplate>
-
-		<DataTemplate DataType="{x:Type vm:LocalFilesViewModel}">
-			<view:LocalFilesView />
+			
+		<DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+			<view:SettingsView />
 		</DataTemplate>
+		
 	</Window.Resources>
 	
     <Grid>
@@ -47,9 +48,9 @@
 			<Button Content="Home" Margin="10" Command="{Binding ShowHomeCommand}" />
 			<Button Content="Youtube" Margin="10" Command="{Binding ShowYoutubeCommand}" />
 			<Button Content="Twitch" Margin="10" Command="{Binding ShowTwitchCommand}" />
-			<Button Content="Settings" Margin="10" Command="{Binding ShowSettingsCommand}" />
-			<Button Content="History" Margin="10" Command="{Binding ShowHistoryCommand}" />
 			<Button Content="Local Files" Margin="10" Command="{Binding ShowLocalFilesCommand}" />
+			<Button Content="History" Margin="10" Command="{Binding ShowHistoryCommand}" />
+			<Button Content="Settings" Margin="10" Command="{Binding ShowSettingsCommand}" />
 		</StackPanel>		
 
         <!-- Main content -->

@@ -4,19 +4,23 @@ using System.Net.Http;
 using System.Net.Http.Json;
 
 namespace desktop.Services {
-    public class YoutubeService {
+    public class YoutubeService: ISearchService {
         public readonly HttpClient _httpClient;
 
         public YoutubeService() {
             _httpClient = HttpClientFactory.getClient();
         }
 
-        internal async Task<List<SearchResult>> SearchAsync(string searchQuery) {
+        async Task<List<SearchResult>> ISearchService.SearchAsync(string searchQuery)
+        {
+             if (string.IsNullOrWhiteSpace(searchQuery)) {
+                throw new ArgumentException("Search query cannot be empty.");
+            }
+
             try {
                 return await _httpClient.GetFromJsonAsync<List<SearchResult>>($"youtube/search?q={Uri.EscapeDataString(searchQuery)}");
             } catch (Exception ex) {
-                Console.WriteLine($"Error occurred while searching: {ex.Message}");
-                return [];
+                throw new Exception("An error occurred while searching.", ex);
             }
         }
     }
